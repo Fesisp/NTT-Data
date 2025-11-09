@@ -4,8 +4,10 @@
 ![Java](https://img.shields.io/badge/Java-24-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![CI/CD](https://img.shields.io/github/actions/workflow/status/Fesisp/NTT-Data/maven.yml?label=CI%2FCD)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 
-> Uma demonstração prática e profissional de uma arquitetura de microserviços usando Spring Boot. Este projeto implementa um sistema completo de gestão de produtos e pedidos, perfeito para aprendizado e referência em desenvolvimento de microserviços.
+> Uma demonstração prática e profissional de uma arquitetura de microserviços usando Spring Boot 3.1.5 e Java 24. Este projeto implementa um sistema completo de gestão de produtos e pedidos, com CI/CD automatizado, containerização Docker e monitoramento integrado.
 
 ## 🌟 Recursos Principais
 
@@ -18,6 +20,10 @@
 - **Load Balancing**: Balanceamento de carga integrado
 - **Resilience**: Circuit breakers para maior resiliência
 - **Service Communication**: Comunicação eficiente com OpenFeign
+- **CI/CD**: Pipeline automatizado com GitHub Actions
+- **Containerization**: Docker e Docker Compose
+- **Health Check**: Monitoramento de saúde dos serviços
+- **Preview Features**: Suporte a recursos preview do Java 24
 
 ### Funcionalidades de Negócio
 - Cadastro e gestão de produtos
@@ -63,15 +69,33 @@ Invoke-RestMethod -Uri 'http://localhost:8200/api/orders' -Method 'POST' -Header
 ## � Executando o Projeto
 
 ### Pré-requisitos
-- Java 24
-- Maven
+- Java 24 (Temurin JDK recomendado)
+- Maven 3.8+
+- Docker e Docker Compose
 - PowerShell ou Windows Terminal
 - Git (opcional)
 
 ### Método Simples (Recomendado)
 
-1. Clone ou baixe o repositório
-2. Execute o script de inicialização:
+1. Clone o repositório:
+```powershell
+git clone https://github.com/Fesisp/NTT-Data.git
+cd NTT-Data
+```
+
+2. Verifique o ambiente e faça o build:
+```powershell
+.\verify-build.ps1
+```
+
+3. Inicie os serviços (escolha um método):
+
+Com Docker:
+```powershell
+docker-compose up -d
+```
+
+Ou localmente:
 ```powershell
 .\start-all-services.ps1
 ```
@@ -132,15 +156,36 @@ mvn spring-boot:run
 - Métricas de performance
 - Logs em tempo real
 
-## 📈 Próximos Passos
+## ✅ Status do Projeto
 
-- [ ] Implementação de autenticação OAuth2
-- [ ] Containerização com Docker
+### Funcionalidades Implementadas
+- [x] Arquitetura de Microserviços
+- [x] Service Discovery com Eureka
+- [x] API Gateway
+- [x] Circuit Breaker com Resilience4j
+- [x] Containerização com Docker
+- [x] CI/CD com GitHub Actions
+- [x] Testes Automatizados
+- [x] Documentação OpenAPI/Swagger
+- [x] Health Checks
+- [x] Monitoramento Básico
+
+### Validações de Qualidade
+- [x] Build com Java 24
+- [x] Testes Unitários
+- [x] Análise de Código (CodeQL)
+- [x] Docker Health Checks
+- [x] Integração Contínua
+- [x] Documentação Atualizada
+
+## 🚀 Próximos Passos Possíveis
+
+- [ ] Autenticação OAuth2
 - [ ] Configuração com Kubernetes
-- [ ] API Gateway com Spring Cloud Gateway
 - [ ] Monitoramento avançado com Prometheus/Grafana
 - [ ] Cache distribuído com Redis
 - [ ] Message Broker com RabbitMQ
+- [ ] Tracing distribuído com Zipkin
 
 ## 🤝 Como Contribuir
 
